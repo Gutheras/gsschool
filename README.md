@@ -1,1 +1,1 @@
-# school-website
+# gands_schools
