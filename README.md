@@ -1,1 +1,1 @@
-# gands_schools
+# gsschool
