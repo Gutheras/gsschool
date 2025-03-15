@@ -29,3 +29,24 @@ window.addEventListener('resize', function() {
         navLinks.style.right = "-200px";
     }
 });
+
+// Automatic copyright year update
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+//Scroll to top
+const scrollTopButton = document.getElementById('scrollTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        scrollTopButton.classList.add('show');
+    } else {
+        scrollTopButton.classList.remove('show');
+    }
+});
+
+scrollTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
