@@ -11,13 +11,47 @@ html, body {
     padding: 0;
     box-sizing: border-box;
   }
-.header{
+  .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(/assets/images/schbg3.jpg);
-    background-position: center;
-    background-size: cover;
     position: relative;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.fade {
+    opacity: 1;
+}
+
+/* Add overlay gradient */
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7));
+}
+
+nav, .text-box {
+    position: relative;
+    z-index: 2;
 }
 .text-logo {
     color: #fff;

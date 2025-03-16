@@ -30,6 +30,33 @@ window.addEventListener('resize', function() {
     }
 });
 
+
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlides() {
+    // Hide all slides
+    slides.forEach(slide => slide.style.opacity = 0);
+    
+    // Show current slide
+    slides[slideIndex].style.opacity = 1;
+    
+    // Move to next slide
+    slideIndex = (slideIndex + 1) % slides.length;
+    
+    // Change image every 10 seconds
+    setTimeout(showSlides, 10000);
+}
+
+// Pause on hover
+const header = document.querySelector('.header');
+header.addEventListener('mouseenter', () => clearTimeout(slideTimer));
+header.addEventListener('mouseleave', showSlides);
+
+// Start slideshow
+let slideTimer = setTimeout(showSlides, 10000);
+
+
 // Automatic copyright year update
 document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
